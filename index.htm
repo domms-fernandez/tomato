@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>splat!</title>
+    <style>
+      * {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+
+        user-select: none;
+        overflow: hidden;
+      }
+      img {
+        height: 20%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let mousepos;
+      document.addEventListener("mousemove", (e) => {
+        mousepos = e;
+      });
+      document.addEventListener("mousedown", () => {
+        if(!mousepos) return;
+        document.body.innerHTML += `<img alt="splat" src="/tomato/tomato-splat.gif" style="left: ${mousepos.x}px; top: ${mousepos.y}px;">`;
+      });
+    </script>
+  </body>
+</html>
